@@ -1,8 +1,8 @@
-<div *ngIf="switch">
-  <div>ON</div>
-  <div (click)="off()">OFF</div>
+<div class="on" *ngIf="switch">
+  <div class="green">ON</div>
+  <div class="clickable" (click)="off()">OFF</div>
 </div>
-<div *ngIf="!switch">
-  <div (click)="on()">ON</div>
-  <div>OFF</div>
+<div class="off" *ngIf="!switch">
+  <div class="clickable" (click)="on()">ON</div>
+  <div class="pink">OFF</div>
 </div>
