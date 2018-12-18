@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class SwitchComponent implements OnInit {
 
   private _switch: boolean = false;
-  @Output() switchChange: EventEmitter<boolean>;
+  @Output() switchChange: EventEmitter<boolean> = new EventEmitter();
 
   @Input()
   get switch() {
@@ -18,10 +18,6 @@ export class SwitchComponent implements OnInit {
   set switch(val: boolean) {
     this.switchChange.emit(val);
     this._switch = val;
-  }
-
-  constructor() {
-    this.switchChange = new EventEmitter();
   }
 
   ngOnInit() {
