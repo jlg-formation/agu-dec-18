@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { interval, Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { ObservableUtils } from './observable-utils';
 
 @Component({
@@ -16,4 +16,7 @@ export class AppComponent {
     interval(300).pipe(map(n => String.fromCharCode(65 + (n % 26)))),
     interval(1000)
   );
+  accumulateObs: Observable<string> =
+   ObservableUtils.accumulate(this.mergedObs).pipe(take(10));
+
 }
