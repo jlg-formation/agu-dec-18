@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormatPhonePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(value: string, args?: any): string {
+    return value.match(/.{1,2}/g).join(' ');
   }
 
 }
