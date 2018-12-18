@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'hello-world';
   phone = '0123456789';
+  myBoolean = false;
 }
