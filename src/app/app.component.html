@@ -16,8 +16,12 @@
   Accumulate observable : {{ accumulateObs | async }}
 </div> -->
 <div>
-  NIR: <input type="text" [(ngModel)]="nir" nirValidator><br>
-  nir: {{nir}}
+  NIR: <input #field="ngModel" name="myNir" type="text" [(ngModel)]="nir" nirValidator><br>
+  <span *ngIf="field.invalid && field.touched">
+    <span *ngIf="field.errors['badgender']">{{field.errors['badgender']}}</span>
+
+  </span>
+
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
@@ -31,4 +35,3 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
-
