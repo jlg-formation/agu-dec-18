@@ -11,9 +11,13 @@
   <app-switch [(switch)]="myBoolean"></app-switch>
   {{myBoolean}}
 </div>
-<div>
+<!-- <div>
   Merged observable : {{ mergedObs | async }}<br>
   Accumulate observable : {{ accumulateObs | async }}
+</div> -->
+<div>
+  NIR: <input type="text" [(ngModel)]="nir" nirValidator><br>
+  nir: {{nir}}
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>

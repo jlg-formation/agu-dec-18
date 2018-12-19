@@ -17,6 +17,7 @@ export class AppComponent {
     interval(1000)
   );
   accumulateObs: Observable<string> =
-   ObservableUtils.accumulate(this.mergedObs).pipe(take(10));
+    ObservableUtils.accumulate(this.mergedObs).pipe(take(10));
+  nir: string;
 
 }
