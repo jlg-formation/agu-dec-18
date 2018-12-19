@@ -1,6 +1,15 @@
 <div *ngIf="beforeSubmit">
     Form: 
-    <form action=""></form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        Login: <input type="text" formControlName="login"><br>
+        <div *ngIf="loginForm.controls['login'].invalid">
+            <span *ngIf="loginForm.controls['login'].errors.required">required field</span>
+            <span *ngIf="loginForm.controls['login'].errors.mustStartWithA">field must start by A or a</span>
+        </div>
+        Password: <input type="password" formControlName="password"><br>
+        <button [disabled]="loginForm.invalid">Submit</button>
+    </form>
+    {{loginForm.value | json}}
 </div>
 <div *ngIf="!beforeSubmit">
     <button (click)="goBack()">Back</button>

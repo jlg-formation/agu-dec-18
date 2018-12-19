@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+
+function mustBeginByA(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } => {
+    if (!/^[aA]/.test(control.value)) {
+      return { 'mustStartWithA': { value: control.value } };
+    }
+    return null;
+  };
+}
 
 @Component({
   selector: 'app-login',
@@ -8,6 +18,12 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   beforeSubmit = true;
+
+  loginForm = new FormGroup({
+    login: new FormControl('', [Validators.required, mustBeginByA()]),
+    password: new FormControl('', Validators.required),
+  });
+
   constructor() { }
 
   ngOnInit() {
@@ -15,6 +31,10 @@ export class LoginComponent implements OnInit {
 
   goBack() {
     this.beforeSubmit = true;
+  }
+
+  onSubmit() {
+    this.beforeSubmit = false;
   }
 
 }
