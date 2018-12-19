@@ -19,6 +19,7 @@
   NIR: <input #field="ngModel" name="myNir" type="text" [(ngModel)]="nir" nirValidator><br>
   <span *ngIf="field.invalid && field.touched">
     <span *ngIf="field.errors['badgender']">{{field.errors['badgender']}}</span>
+    <span *ngIf="field.errors['badyear']">{{field.errors['badyear']}}</span>
 
   </span>
 
