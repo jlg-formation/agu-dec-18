@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "cnaf-utils": [
+        "dist/cnaf-utils"
+      ],
+      "cnaf-utils/*": [
+        "dist/cnaf-utils/*"
+      ]
+    }
   }
 }

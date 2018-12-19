@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CnafModule } from './cnaf/cnaf.module';
+import { CnafModule } from 'projects/cnaf-utils/src/lib/cnaf/cnaf.module';
 
 @NgModule({
   declarations: [

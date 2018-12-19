@@ -1,9 +1,12 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CnafModule } from 'projects/cnaf-utils/src/public_api';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [CnafModule, FormsModule],
       declarations: [
         AppComponent
       ],

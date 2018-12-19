@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "cnaf-utils": {
+      "root": "projects/cnaf-utils",
+      "sourceRoot": "projects/cnaf-utils/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cnaf-utils/tsconfig.lib.json",
+            "project": "projects/cnaf-utils/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cnaf-utils/src/test.ts",
+            "tsConfig": "projects/cnaf-utils/tsconfig.spec.json",
+            "karmaConfig": "projects/cnaf-utils/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cnaf-utils/tsconfig.lib.json",
+              "projects/cnaf-utils/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "hello-world"
