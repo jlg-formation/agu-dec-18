@@ -11,3 +11,4 @@ export * from './lib/cnaf/login/login.component';
 export * from './lib/cnaf/switch/switch.component';
 export * from './lib/cnaf/format-phone.pipe';
 export * from './lib/cnaf/nir-validator.directive';
+export * from './lib/cnaf/region/region.component';

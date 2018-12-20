@@ -134,7 +134,7 @@
       "root": "projects/cnaf-utils",
       "sourceRoot": "projects/cnaf-utils/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",

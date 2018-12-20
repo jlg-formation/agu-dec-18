@@ -24,4 +24,13 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should do a valid form', () => {
+    const login = 'aqwer';
+    const password = 'qwerqwer';
+    component.loginForm.setValue({
+      login, password
+    });
+    expect(component.loginForm.valid).toEqual(true);
+  });
 });
