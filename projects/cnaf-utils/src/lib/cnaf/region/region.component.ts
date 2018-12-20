@@ -13,11 +13,15 @@ export class RegionComponent implements OnInit {
 
   url = 'https://gist.githubusercontent.com/SiamKreative/f1074ed95507e69d08a0/raw/bbf2c9dbb156eef1cebf37c8846331f3f3493fa6/french-regions-departments.json';
   data: JsonObj;
+  regions: string[];
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http.get<JsonObj>(this.url).subscribe({
-      next: data => this.data = data,
+      next: data => {
+        this.data = data;
+        this.regions = Object.keys(data.regions);
+      },
       error: error => console.log('error', error)
     });
   }
